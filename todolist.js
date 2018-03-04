@@ -25,6 +25,7 @@ we create an empty one int eh form of an array*/
 .post('/todo/add/', urlencodedParser, function(req, res){
 	if(req.body.newtodo != ''){
 		req.session.todolist.push(req.body.newtodo);
+		console.log(req.body.newtodo);
 	}
 	res.redirect('/todo');
 })
@@ -33,6 +34,7 @@ we create an empty one int eh form of an array*/
 .get('/todo/delete/:id', function(req, res){
 	if( req.params.id != ''){
 		req.session.todolist.splice(req.params.id, 1);
+		console.log("Delete number" + req.params.id);
 	}
 	res.redirect('/todo');
 })
