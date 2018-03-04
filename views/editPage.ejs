@@ -9,6 +9,13 @@
 				<input type="text" name="editBox" id="editBox" />
 				<input type="submit" value="Submit">
 			</form>
+			<form action="/todo/reorderList/<%=numTask%>" method = "post">
+				<label for="newposition">
+					Where do you want place task <%= numTask %>? (0 is first spot)
+				</label>
+				<input type="text" name="newposition" id="newposition" />
+				<input type="submit" value="Submit">
+			</form>
 		</p>
 	</body>
 </html>

@@ -48,6 +48,17 @@ we create an empty one int eh form of an array*/
 .post('/todo/appendedit/:id', urlencodedParser, function(req, res){
 	if(req.params.id != ''){
 		req.session.todolist[req.params.id] = req.body.editBox;
+		console.log('editted list');
+	}
+	res.redirect('/todo');
+})
+//to reorder the list
+.post('/todo/reorderList/:id', urlencodedParser, function(req, res){
+	if(req.params.id != ''){
+		temp = req.session.todolist[req.params.id];
+		req.session.todolist.splice(req.params.id, 1);
+		req.session.todolist.splice(req.body.newposition, 0, temp);
+		console.log('Put element ' + req.params.id + ' at position ' + req.body.newposition);
 	}
 	res.redirect('/todo');
 })
