@@ -13,7 +13,7 @@
 
 		<u1>
 		<% todolist.forEach(function(todo,index){%>
-			<li><a href="/todo/delete/<%= index%>"> X </a> <%= todo %></li>
+			<li><a href="/todo/delete/<%= index%>"> X </a> <%= todo %> <a href="/todo/edit/<%= index%>"> edit</a> </li>
 		<% }); %>
 		</u1>
 

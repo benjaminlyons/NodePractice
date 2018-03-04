@@ -39,6 +39,18 @@ we create an empty one int eh form of an array*/
 	res.redirect('/todo');
 })
 
+// to goto page to edit an element of the 
+.get('/todo/edit/:id', function(req, res){
+	res.render("editPage.ejs", {numTask: req.params.id});
+})
+
+//to actually edit the list
+.post('/todo/appendedit/:id', urlencodedParser, function(req, res){
+	if(req.params.id != ''){
+		req.session.todolist[req.params.id] = req.body.editBox;
+	}
+	res.redirect('/todo');
+})
 //* redirects to the todolist if the page requested is not found
 .use(function(req, res, next){
 	res.redirect('/todo');

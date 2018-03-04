@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>
+			<form action="/todo/appendedit/<%= numTask %>" method = "post">
+				<label for="editBox">
+					How do you want to change task <%= numTask %> ?
+				</label>
+				<input type="text" name="editBox" id="editBox" />
+				<input type="submit" value="Submit">
+			</form>
+		</p>
+	</body>
+</html>
